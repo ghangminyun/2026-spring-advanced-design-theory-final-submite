@@ -189,6 +189,8 @@ git push
 
 Pull Request가 만들어지면 제출이 완료된 것입니다.
 
+학생이 본인 fork에 push하거나 Pull Request를 만들어도, 원본 저장소의 `main`에는 바로 들어가지 않습니다. 교수자가 **Merge pull request**를 눌러야만 원본 `main`에 반영됩니다.
+
 ## 제출 후 수정하고 싶을 때
 
 마감 전이라면 수정할 수 있습니다.
@@ -218,7 +220,10 @@ git push
 학생들이 fork할 때는 그 시점의 원본 저장소 내용이 복사됩니다. 따라서 다른 학생의 제출물이 원본 저장소에 merge되어 있으면, 나중에 fork하는 학생은 그 제출물까지 함께 복사하게 됩니다.
 이를 방지하기 위해 이 과제 저장소는 다음 방식으로 운영합니다.
 
+- 학생은 본인 fork에 push한 뒤 원본 저장소로 Pull Request를 만듭니다.
 - 학생은 Pull Request를 만들면 제출이 완료됩니다.
+- 학생이 push하거나 Pull Request를 만들어도 원본 저장소의 `main`에는 바로 들어가지 않습니다.
+- 교수자가 **Merge pull request**를 눌러야 원본 `main`에 반영됩니다.
 - 교수자는 마감 전까지 학생 Pull Request를 merge하지 않습니다.
 - 제출물은 원본 저장소의 **Pull requests** 탭에서 개별적으로 확인합니다.
 - 마감 후 필요할 때만 merge하거나, merge하지 않고 Pull Request 상태 그대로 채점할 수 있습니다.
@@ -270,6 +275,8 @@ Pull Request를 만든 뒤 다음을 확인하세요.
 - Pull Request 파일 목록에 본인 폴더가 보이는지 확인합니다.
 - 최종 과제 파일이 모두 포함되어 있는지 확인합니다.
 - Pull Request 제목이 `[최종과제 제출] 이름` 형식인지 확인합니다.
+- Pull Request가 아직 merge되지 않았더라도 정상 제출입니다.
+- 마감 전 수정이 필요하면 본인 fork에 다시 push하세요. 기존 Pull Request가 자동으로 업데이트됩니다.
 
 ## 자주 발생하는 문제
 
