@@ -1,0 +1,301 @@
+.wrap {
+  position: relative;
+  height: 100vh;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent;
+}
+
+.wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(180, 120, 255, 0.15),
+    transparent 45%
+  );
+  background-size: 120px 120px;
+  opacity: 0.15;
+  animation: starTwinkle 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes starTwinkle {
+  from {
+    opacity: 0.08;
+  }
+  to {
+    opacity: 0.18;
+  }
+}
+.mouseLight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+
+  background: radial-gradient(
+    circle,
+    rgba(180, 120, 255, 0.35),
+    rgba(180, 120, 255, 0.18) 35%,
+    transparent 10%
+  );
+
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+}
+
+.galaxybg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      1200px 600px at 20% 10%,
+      rgba(139, 92, 246, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      1000px 500px at 80% 20%,
+      rgba(224, 98, 161, 0.15),
+      transparent 50%
+    ),
+    linear-gradient(180deg, #191955, #0b0b2e);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 중앙 원 */
+.centerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.35),
+    rgba(40, 20, 80, 0.9) 60%
+  );
+  box-shadow:
+    0 0 120px rgba(180, 120, 255, 0.6),
+    0 40px 80px rgba(0, 0, 0, 0.65);
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 1;
+
+  transition: box-shadow 0.3s ease;
+}
+.centerCircle:hover {
+  box-shadow:
+    0 26px 55px rgba(0, 0, 0, 0.55),
+    inset 0 6px 16px rgba(255, 255, 255, 0.15);
+}
+
+.centerCircle h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.centerCircle p {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.smallCircle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  z-index: 3;
+}
+.smallCircleInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.9),
+    rgba(236, 72, 153, 0.85)
+  );
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1.2, 0.36, 1),
+    box-shadow 0.6s ease;
+
+  /* animation: microFloat 6s ease-in-out infinite; */
+}
+
+@keyframes microFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2px, -4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.smallCircleInner:hover {
+  animation-play-state: paused;
+  transform: translateY(-18px) scale(1.08);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    inset 0 6px 16px rgba(255, 255, 255, 0.22);
+}
+.floatLayer {
+  width: 100%;
+  height: 100%;
+  animation: microFloat 6s ease-in-out infinite;
+}
+
+.smallCircleInner {
+  transition: transform 0.6s cubic-bezier(0.22, 1.2, 0.36, 1);
+}
+
+.smallCircleInner:hover {
+  transform: translateY(-18px) scale(1.08);
+}
+
+.c1 .smallCircleInner {
+  animation-duration: 6s;
+  filter: brightness(1.05);
+}
+.c2 .smallCircleInner {
+  animation-duration: 4s;
+  filter: hue-rotate(2deg);
+}
+.c3 .smallCircleInner {
+  animation-duration: 8s;
+  filter: brightness(0.95);
+}
+.c4 .smallCircleInner {
+  animation-duration: 4s;
+  filter: hue-rotate(-2deg);
+}
+.c5 .smallCircleInner {
+  animation-duration: 5s;
+  filter: hue-rotate(-3deg);
+}
+.c6 .smallCircleInner {
+  animation-duration: 6s;
+  filter: brightness(1.02);
+}
+.c7 .smallCircleInner {
+  animation-duration: 7s;
+  filter: brightness(1);
+}
+
+.circle3D {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flipped .circle3D {
+  transform: rotateY(180deg);
+}
+
+.circleFront,
+.circleBack {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  backface-visibility: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: "Inter", "Pretendard", system-ui, sans-serif;
+}
+
+.circleFront {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.9),
+    rgba(236, 72, 153, 0.85)
+  );
+  font-size: 25px;
+}
+
+.circleBack {
+  background: rgba(10, 10, 25, 0.95);
+  transform: rotateY(180deg);
+  flex-direction: column;
+}
+.circleBack h3 {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.circleBack span {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+.circleBack p {
+  font-size: 15px;
+}
+
+.c1 {
+  width: 210px;
+  height: 210px;
+  top: 5%;
+  left: 35%;
+}
+.c2 {
+  width: 190px;
+  height: 190px;
+  top: 30%;
+  left: 15%;
+}
+.c3 {
+  width: 170px;
+  height: 170px;
+  bottom: 18%;
+  left: 28%;
+}
+.c4 {
+  width: 200px;
+  height: 200px;
+  top: 15%;
+  right: 30%;
+}
+.c5 {
+  width: 180px;
+  height: 180px;
+  bottom: 50%;
+  right: 10%;
+}
+.c6 {
+  width: 190px;
+  height: 190px;
+  bottom: 9%;
+  right: 18%;
+}
+.c7 {
+  width: 220px;
+  height: 220px;
+  top: 38%;
+  right: 50%;
+}

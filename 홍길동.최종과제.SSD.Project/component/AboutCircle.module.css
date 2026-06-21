@@ -1,0 +1,167 @@
+.about {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 200, 140, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(140, 180, 255, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(180deg, #0e0f13, #090a0d);
+  color: #eaeaf0;
+  isolation: isolate;
+}
+
+/* 우측 프로필 영역 */
+.profile {
+  position: absolute;
+  right: 340px;
+  bottom: 180px;
+  z-index: 10;
+  padding: 38px 36px;
+  border: 2px solid rgba(27, 153, 143, 0.55);
+  border-radius: 22px;
+  border-color: rgba(162, 184, 120, 0.9);
+  box-shadow:
+    0 0 0 6px rgba(120, 180, 90, 0.12),
+    0 0 28px rgba(120, 180, 90, 0.36);
+}
+
+/* 내부 정렬 (텍스트 | 사진) */
+.profileInner {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+/* 텍스트 영역 */
+.text {
+  max-width: 320px;
+
+  p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    font-weight: 500;
+
+    &:first-child {
+      font-size: 22px;
+      font-weight: 600;
+    }
+  }
+}
+
+/* 프로필 사진 */
+.photo {
+  width: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.photo img {
+  width: 100%;
+  display: block;
+  filter: contrast(1.05) saturate(1.05);
+}
+/*    좌측 영역 */
+.left {
+  position: relative;
+  width: 70%;
+  height: 90%;
+  z-index: 3;
+}
+.text p {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.75;
+}
+
+.text p:first-child {
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* 좌측 배경 위 어두운 오버레이 */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  padding-top: 340px;
+}
+/* 좌우명 */
+.motto {
+  font-size: 50px;
+  font-weight: 600;
+  max-width: 780px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin-bottom: 24px;
+  position: relative;
+  padding: 40px 46px;
+  border: 2px solid rgba(255, 99, 71, 0.55);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+  border-color: rgba(255, 120, 90, 0.9);
+  box-shadow:
+    0 0 0 6px rgba(255, 120, 90, 0.12),
+    0 0 28px rgba(255, 120, 90, 0.36);
+  opacity: 1;
+}
+.mottotext,
+.sub {
+  position: relative;
+  padding-left: 0px;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 0;
+  transform: translateY(50px);
+  margin-top: 30px;
+}
+
+/*    반응형 (모바일) */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 40px;
+  }
+
+  .motto {
+    font-size: 32px;
+  }
+
+  .profile {
+    position: static;
+    margin: 40px auto 0;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .profileInner {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo {
+    width: 260px;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    max-width: 100%;
+  }
+}

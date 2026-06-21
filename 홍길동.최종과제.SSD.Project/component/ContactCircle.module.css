@@ -1,0 +1,153 @@
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 140px 40px 160px;
+  padding-bottom: 160px;
+  background: #e08989;
+  overflow: hidden;
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+
+  background: radial-gradient(
+    circle,
+    rgba(180, 160, 255, 0.25),
+    rgba(180, 160, 255, 0.05),
+    transparent 70%
+  );
+
+  filter: blur(20px);
+}
+.introAvatar {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.introAvatar img {
+  width: 640px;
+  opacity: 0.6;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  border-radius: 50%;
+}
+
+.content {
+  margin-top: 200px;
+  text-align: center;
+}
+.message {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  color: #111;
+  text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.subMessage {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #666;
+}
+
+
+
+/* ---------------- Marquee ---------------- */
+.marquee {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 200%;
+  display: flex;
+  gap: 40px;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+  color: #2c3e50;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+
+  span {
+    flex-shrink: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------- Inner ---------------- */
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 180px;
+  height: calc(100vh - 300px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+/* ---------------- Links ---------------- */
+.links {
+  display: flex;
+  gap: 28px;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 2px solid #111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  background: transparent;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    background: #111;
+    color: #fff;
+    transform: translateY(-4px);
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .marquee {
+    font-size: 36px;
+  }
+
+  .cv {
+    font-size: 36px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 18px;
+  }
+}

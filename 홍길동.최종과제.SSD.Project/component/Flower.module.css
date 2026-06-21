@@ -1,0 +1,51 @@
+.sky {
+  position: relative;
+  height: 35vh;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(to bottom, #fdf2f6, #eef6ff);
+  overflow: hidden;
+}
+
+.horizon {
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140vw;
+  height: 240px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.flower {
+  position: absolute;
+  opacity: 0.6;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.f1 {
+  top: 18%;
+  left: 10%;
+}
+
+.f2 {
+  top: 8%;
+  right: 18%;
+}
+
+.f3 {
+  top: 32%;
+  left: 38%;
+}
+
+.f4 {
+  top: 16%;
+  right: 42%;
+}
+
+.f5 {
+  top: 26%;
+  left: 70%;
+}

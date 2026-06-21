@@ -1,0 +1,88 @@
+.featured {
+  position: relative;
+  padding: 140px 8vw 160px;
+  background:
+    radial-gradient(
+      900px 500px at 15% -10%,
+      rgba(139, 92, 246, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      800px 450px at 85% 10%,
+      rgba(236, 72, 153, 0.14),
+      transparent 50%
+    ),
+    linear-gradient(180deg, #07071c, #0b0b2e);
+  color: #f2f2f7;
+  overflow: hidden;
+}
+
+/* 타이틀 */
+.featured h2 {
+  max-width: 720px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 22px;
+}
+
+/* 설명 */
+.featured p {
+  max-width: 640px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d6d6e8;
+  margin-bottom: 40px;
+}
+
+/* 버튼 영역 */
+.actions {
+  display: flex;
+  gap: 18px;
+}
+
+/* Live Demo 버튼 */
+.actions a {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow: 0 12px 28px rgba(139, 92, 246, 0.45);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.actions a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(139, 92, 246, 0.6);
+}
+
+/* 살짝 감성 원 배경 (ProjectsCircle랑 연결감) */
+.featured::before,
+.featured::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.featured::before {
+  top: -120px;
+  left: -120px;
+  background: rgba(139, 92, 246, 0.45);
+}
+
+.featured::after {
+  bottom: -140px;
+  right: -140px;
+  background: rgba(236, 72, 153, 0.45);
+}
